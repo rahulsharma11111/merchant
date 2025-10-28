@@ -1,0 +1,19 @@
+.model small
+.stack 100h
+.data
+a dw 27h
+b dw 24h
+c dw ?
+.code
+main:
+mov ax,@data
+mov ds,ax
+mov ax,a
+mov bx,b
+sub ax,bx
+mov ah,0h
+int 3
+mov c,ax
+mov ah,09h
+int 21
+end main
